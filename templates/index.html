@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title>Dmitry Pozner</title>
+    <SCRIPT LANGUAGE="JavaScript">
+            function applyTheme(theme) {
+                document.body.classList.remove("theme-auto", "theme-light", "theme-dark");
+                document.body.classList.add(`theme-${theme}`);
+            }
+
+            document.addEventListener("DOMContentLoaded", () => {
+                document.querySelector("#theme").addEventListener("change", function() {
+                applyTheme(this.value);
+                });
+            });
+            document.addEventListener("DOMContentLoaded", () => {
+                const savedTheme = localStorage.getItem("theme") || "auto";
+
+                applyTheme(savedTheme);
+
+                for (const optionElement of document.querySelectorAll("#theme option")) {
+                    optionElement.selected = savedTheme === optionElement.value;
+                }
+
+                document.querySelector("#theme").addEventListener("change", function () {
+                    localStorage.setItem("theme", this.value);
+                    applyTheme(this.value);
+                });
+            });
+    </SCRIPT>
+<!--    <link rel="stylesheet" href=""/>-->
+<!--    <link rel="stylesheet" href="/text.css"/>-->
+
+    <link rel="stylesheet" href="/static/style.css"/>
+
+
+
+
+
+
+</head>
+<body>
+<div class="container_1">
+    <div class="grid_12" id="header">
+        <h1>Dmitry Pozner`s Web Page</h1>
+    </div>
+    <div class="clear"></div>
+    <div class="grid_9" id="rss-updates">
+        <h2>Skills</h2>
+        <ul>
+            <li>Linux</li>
+            <li>Scripts on bash, python & powershell</li>
+            <li>CI/CD (Jenkins, Github Actions)</li>
+            <li>Docker</li>
+
+
+        </ul>
+    </div>
+    <div class="grid_3" id="about">
+        <div>
+            <h2>About</h2>
+            <p>Dmitry Pozner is a beginner system administrator and DevOps engineer.</p>
+            <h2>Resources</h2>
+            <ul id="resources">
+                <li><a href="">Blog</a></li>
+                <li><a href="">Github</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="clear"></div>
+    <div class="grid_12" id="footer">
+        <p>(c) 2022 Dmitry Pozner. Powered by <a href="http://flash.pocoo.org">Flask</a>.</a></p>
+    </div>
+</div>
+</body>
+</html>
+

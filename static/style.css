@@ -1,0 +1,33 @@
+body         {
+                font-family: 'Georgia', serif; font-size: 15px; color: #000;
+               text-align: left; }
+ul           { margin-left: 0; }
+li           { list-style-type: circle; margin-left: 0; }
+.li-img      { vertical-align: text-top; margin-right: 3px; }
+#about       { background-color: #EEE; }
+#about div   { padding: 5px; }
+#footer      { text-align: center; font-size: 70%; font-style: italic; }
+resources li { list-style-type: square; margin-left: 1em; }
+.container_1{
+margin-left:auto;
+margin-right:auto;
+width:960px
+}
+
+body {
+    --background-color: #ffffff;
+    --text-color: #000000;
+}
+.main-content {
+    background: var(--background-color);
+    color: var(--text-color);
+}
+
+button {
+    color: var(--text-color);
+}
+:root {
+    --dark-background-color: #111111;
+    --dark-text-color: #eeeeee;
+}
+
