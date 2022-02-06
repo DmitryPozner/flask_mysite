@@ -12,8 +12,8 @@ jobs:
       - uses: docker/login-action@v1     
       - name: Login DockerHub
         with:
-            username: ${{}}
-            password: ${{}}
+            username: ${{ secrets.DOCKERHUB_USERNAME}}
+            password: ${{ secrets.DOCKERHUB_TOKEN}}
         
       - name: Git clone my repo
       - uses: actions/checkout@v2 
@@ -33,6 +33,8 @@ jobs:
          key: ${{ secrets.SSH_PRIVATE_KEY }}
          port: ${{ secrets.SSH_PORT }}
          script: |
+          ls -la
+          docker ps -a
           docker container stop my_site
           docker container rm -f my_site
           docker login --username ${{ secrets.DOCKERHUB_USERNAME }} --password ${{ secrets.DOCKERHUB_TOKEN }} 
