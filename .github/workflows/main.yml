@@ -1,8 +1,7 @@
-name: CI
+name: CI of my_flask_site
 on:
   push:
-    branches: [ master ] 
-    
+    branches: [ master ]     
   workflow_dispatch:
    
 jobs: 
