@@ -1,9 +1,7 @@
 name: CI
 on:
   push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
+    branches: [ master ] 
     
   workflow_dispatch:
    
@@ -11,11 +9,33 @@ jobs:
   build:  
     runs-on: ubuntu-latest  
     steps:
-      - uses: actions/checkout@v2     
-      - name: Run a one-line script
-        run: echo Hello, world!
-     
-      - name: Run a multi-line script
+      - uses: docker/login-action@v1     
+      - name: Login DockerHub
+        with:
+            username: ${{}}
+            password: ${{}}
+        
+      - name: Git clone my repo
+      - uses: actions/checkout@v2 
+                
+       
+      - name: Build docker image and push to docker regisrty
         run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+          docker build -t ${{ secrets.DOCKER_IMAGE }} .
+          docker push ${{ secrets.DOCKER_IMAGE }}
+        
+           
+      - name: Pull and Run
+        uses: appleboy/ssh-action@master
+        with:
+         host: ${{ secrets.SSH_HOST }}
+         username: ${{ secrets.REMOTE_USERNAME }}
+         key: ${{ secrets.SSH_PRIVATE_KEY }}
+         port: ${{ secrets.SSH_PORT }}
+         script: |
+          docker container stop my_site
+          docker container rm -f my_site
+          docker login --username ${{ secrets.DOCKERHUB_USERNAME }} --password ${{ secrets.DOCKERHUB_TOKEN }} 
+          docker pull ${{ secrets.DOCKER_IMAGE }}
+          docker container run -d -p 5000:5000 --name my_site ${{ secrets.DOCKER_IMAGE }}
+     
