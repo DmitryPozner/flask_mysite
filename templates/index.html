@@ -1,78 +1,97 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="no-js js" lang="en">
+<!--<![endif]-->
+
 <head>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
-    <title>Dmitry Pozner</title>
-    <SCRIPT LANGUAGE="JavaScript">
-            function applyTheme(theme) {
-                document.body.classList.remove("theme-auto", "theme-light", "theme-dark");
-                document.body.classList.add(`theme-${theme}`);
-            }
-
-            document.addEventListener("DOMContentLoaded", () => {
-                document.querySelector("#theme").addEventListener("change", function() {
-                applyTheme(this.value);
-                });
-            });
-            document.addEventListener("DOMContentLoaded", () => {
-                const savedTheme = localStorage.getItem("theme") || "auto";
-
-                applyTheme(savedTheme);
-
-                for (const optionElement of document.querySelectorAll("#theme option")) {
-                    optionElement.selected = savedTheme === optionElement.value;
-                }
-
-                document.querySelector("#theme").addEventListener("change", function () {
-                    localStorage.setItem("theme", this.value);
-                    applyTheme(this.value);
-                });
-            });
-    </SCRIPT>
-<!--    <link rel="stylesheet" href=""/>-->
-<!--    <link rel="stylesheet" href="/text.css"/>-->
-
-    <link rel="stylesheet" href="/static/style.css"/>
-
-
-
-
+    <!-- reference your installed Font Awesome Free package's files here -->
+    <!-- <link rel="stylesheet" href="font-awesome.css"> -->
+    <link rel="stylesheet" href="../static/main.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css" integrity="sha384-jLKHWM3JRmfMU0A5x5AkjWkw/EYfGUAGagvnfryNV3F9VqM98XiIH7VBGVoxVSc7" crossorigin="anonymous">
 
 
 </head>
+
 <body>
-<div class="container_1">
-    <div class="grid_12" id="header">
-        <h1>Dmitry Pozner`s Web Page</h1>
-    </div>
-    <div class="clear"></div>
-    <div class="grid_9" id="rss-updates">
-        <h2>Skills</h2>
-        <ul>
-            <li>Linux</li>
-            <li>Scripts on bash, python & powershell</li>
-            <li>CI/CD (Jenkins, Github Actions)</li>
-            <li>Docker</li>
+    <nav class="clearfix border-bottom border-light-gray">
+        <div class="left">
+            <a href="" class="button py2 button-transparent nav-button caps">Dmitry Pozner's Web Page</a>
+        </div>
 
 
         </ul>
-    </div>
-    <div class="grid_3" id="about">
-        <div>
-            <h2>About</h2>
-            <p>Dmitry Pozner is a beginner system administrator and DevOps engineer.</p>
-            <h2>Resources</h2>
-            <ul id="resources">
-                <li><a href="">Blog</a></li>
-                <li><a href="">Github</a></li>
-            </ul>
+    </nav>
+    <header class="bg-splash-gray px3 py3 border-bottom border-light-gray">
+        <div class="center">
+            <a href="">
+                <img data-src="" alt="Dmitry Pozner" class=" border bg-white p1 border-light-gray circle square-100 lazyloaded" src="../static/DmitryPozner.jpg">
+            </a>
+            <div class="clearfix">
+                <a href="https:///">
+                    <h1 class="page-title mt0 mb1">
+                        Dmitry Pozner
+                    </h1>
+                </a>
+            </div>
+            <h2 class="page-description body-font gray mt0 h3 regular">
+            </h2>
         </div>
-    </div>
-    <div class="clear"></div>
-    <div class="grid_12" id="footer">
-        <p>(c) 2022 Dmitry Pozner. Powered by <a href="http://flash.pocoo.org">Flask</a>.</a></p>
-    </div>
-</div>
-</body>
-</html>
+    </header>
+    <main class="container block p3">
+        <div class="clearfix mxn2">
+            <div class="col sm-col-9 px2">
+                <h3 class="mb2">About me</h3>
+                <p>
+                    Dmitry Pozner is a beginner system administrator and DevOps engineer. I am currently working as a technical support specialist. I love IT. I am very fond of music, I play the guitar. I love jazz, blues, hard rock and extreme metal
 
+                </p>
+
+                <h3 class="mb2">Skills</h3>
+                <p>
+                    <ul>
+                        <li>Linux Servers and Windows Servers</li>
+                        <li>Scripts on bash, python & powershell</li>
+                        <li>CI/CD (Jenkins, Github Actions)</li>
+                        <li>Docker</li>
+                        <li>Git</li>
+
+
+                    </ul>
+
+
+                </p>
+            </div>
+            <div class="col sm-col-3 px2">
+                <h3 class="mb2">Contact</h3>
+                <div class="clearfix">
+
+                    <a href="https://www.facebook.com" target="_blank" class="col dark-gray width-120">
+                        <i class="fab fa-facebook"></i>
+                        <span class="h5 header-font">Facebook</span>
+                    </a>
+
+                    <a href="https://github.com/" target="_blank" class="col dark-gray width-120">
+                        <i class="fab fa-github"></i>
+                        <span class="h5 header-font">GitHub</span>
+                    </a>
+                    <a href="mailto:*.com" target="_blank" class="col dark-gray width-120">
+                        <i class="fas fa-envelope"></i>
+                        <span class="h5 header-font">Email</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="sticky-footer border-top border-light-gray gray h6">
+
+        <div class="clear"></div>
+        <div class="grid_12" id="footer">
+            <p>(c) 2022 Dmitry Pozner. Powered by <a href="http://*">Flask</a>.</a>
+            </p>
+        </div>
+
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+</body>
+
+
+</html>
