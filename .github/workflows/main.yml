@@ -12,8 +12,8 @@ jobs:
       - name: Login DockerHub
         uses: docker/login-action@v1  
         with:
-            username: DmitryPozner
-            password: acb85449-31ce-4efd-afa9-9d8d44c832d8
+            username: ${{ secrets.DOCKERHUB_USERNAME }}
+            password: ${{ secrets.DOCKERHUB_TOKEN }}
         
       
       - name: Git clone my repo
