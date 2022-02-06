@@ -37,5 +37,5 @@ jobs:
           docker container rm -f my_site
           docker login --username ${{ secrets.DOCKERHUB_USERNAME }} --password ${{ secrets.DOCKERHUB_TOKEN }} 
           docker pull ${{ secrets.DOCKER_IMAGE }}
-          docker container run -d -p 5000:5000 --name my_site ${{ secrets.DOCKER_IMAGE }}
+          docker container run -d -p 8888:8888 --name my_site ${{ secrets.DOCKER_IMAGE }}
      
