@@ -38,6 +38,7 @@ jobs:
          key: ${{ secrets.SSH_PRIVATE_KEY }}
          port: ${{ secrets.SSH_PORT }}
          script: |
+          whoami
           ls -la
           docker ps -a
           docker container stop my_site
