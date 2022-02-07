@@ -18,6 +18,7 @@ jobs:
       
       - name: Git clone my repo
         uses: actions/checkout@v2
+      - run: ls -la
       
                 
        
@@ -25,6 +26,8 @@ jobs:
         run: |
           docker build -t ${{ secrets.DOCKER_IMAGE }} .
           docker push ${{ secrets.DOCKER_IMAGE }}
+          docker ps -a
+          docker images
         
            
       - name: Pull and Run
