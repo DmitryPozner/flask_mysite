@@ -1,4 +1,4 @@
-name: CI of my_flask_site v0.2.0
+name: CI of my_flask_site v0.2.1
 on:
   push:
     branches: [ master ]     
@@ -45,5 +45,5 @@ jobs:
           docker container rm -f my_site
           docker login --username ${{ secrets.DOCKERHUB_USERNAME }} --password ${{ secrets.DOCKERHUB_TOKEN }} 
           docker pull ${{ secrets.DOCKER_IMAGE }}
-          docker container run -d -p 80:8888 --name my_site ${{ secrets.DOCKER_IMAGE }}
+          docker container run -d -p 8888:80 --name my_site ${{ secrets.DOCKER_IMAGE }}
      
