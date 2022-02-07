@@ -25,9 +25,7 @@ jobs:
       - name: Build docker image and push to docker regisrty
         run: |
           docker build -t ${{ secrets.DOCKER_IMAGE }} .
-          docker push ${{ secrets.DOCKER_IMAGE }}
-          docker ps -a
-          docker images
+          docker push ${{ secrets.DOCKER_IMAGE }}         
         
            
       - name: Pull and Run
@@ -37,9 +35,7 @@ jobs:
          username: ${{ secrets.REMOTE_USERNAME }}
          key: ${{ secrets.SSH_PRIVATE_KEY }}
          port: ${{ secrets.SSH_PORT }}
-         script: |
-          whoami
-          ls -la
+         script: |          
           docker ps -a
           docker container stop my_site
           docker container rm -f my_site
