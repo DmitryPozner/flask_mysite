@@ -4,6 +4,6 @@ WORKDIR /app
 COPY . .
 
 RUN pip install -r requirements.txt
-
-ENTRYPOINT ["python3"]
+EXPOSE 80
+ENTRYPOINT ["python"]
 CMD ["application.py"]
