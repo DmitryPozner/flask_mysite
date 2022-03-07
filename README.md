@@ -1,6 +1,6 @@
 
 # Web Page 
-#...... Flask, WSGI, Apache2
+#...... Flask, WSGI
 Auto Deploy of Flask app with GitHub Actions, Docker
 
 
