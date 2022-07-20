@@ -1,10 +1,10 @@
+Реализация CI простейшего Flask приложения с использованием GitHub Actions, Docker.
+Запуск Actions срабатывает после push в ветку master.
+Этапы: build
+    - клонирование репозитория на vps сервер
+    - авторизация и сборка образа на Dockerhub
+    - pull с Docker registry и запуск докер контейнера с flask приложением, предварительно удалив неиспользуемые контейнеры.
 
-
-
-
-=======
-
-Auto Deploy of Flask Simpliest Web Page with GitHub Actions, Docker
-
+url страницы http://80.76.42.94/
 
 

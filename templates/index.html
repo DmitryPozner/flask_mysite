@@ -3,48 +3,18 @@
 
 <head>
     <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
-
     <title>{{ title }}</title>
 </head>
 
 <body>
-    {% include 'nav.html' %} {% include 'header.html' %}
-
+    {% block nav %} {% include 'nav.html' %} {% endblock %}
+    <!-- -->
+    {% block header %} {% include 'header.html' %} {% endblock %}
     <main class="container block p3">
         <div class="clearfix mxn2">
-            <div class="col sm-col-9 px2">
-                <h3 class="mb2">About me</h3>
-                <p>
-                    Dmitry Pozner is a beginner system administrator and DevOps engineer. I am currently working as a technical support specialist. I love IT. I am very fond of music, I play the guitar. I love jazz, blues, hard rock and extreme metal.
-                </p>
-                <h3 class="mb2">Skills</h3>
-                <p>
-                    <ul>
-                        {% for skill in skills %}
-                        <li>{{ skill }}</li>
-                        {% endfor %}
-                    </ul>
-                </p>
-            </div>
-            <div class="col sm-col-3 px2">
-                <h3 class="mb2">Contact</h3>
-                <div class="clearfix">
-                    {% for contact in contacts %}
-                    <a href={{ contact.link }} target="_blank" class="col dark-gray width-120">
-                        <i class="fab fa-github"></i> <span class="h5 header-font">{{ contact.service}} <br></span><br> {% endfor %}
-
-                </div>
-            </div>
+            {% block content %} {% include 'content.html' %} {% endblock %}
         </div>
     </main>
-    <footer class="sticky-footer border-top border-light-gray gray h6">
-
-        <div class="clear"></div>
-        <div class="grid_12" id="footer">
-            <p>
-                <a href="http://*"></a>(c) 2022 Dmitry Pozner. Powered by Flask</a>.</a>
-            </p>
-        </div>
-    </footer>
+    {% include 'footer.html' %}
 
 </html>

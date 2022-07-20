@@ -40,6 +40,7 @@ jobs:
           docker container stop my_site
           docker container rm -f my_site
           docker rmi -f my_site
+          docker ps --filter "status=exited" | grep 'weeks ago' | awk '{print $1}' | xargs --no-run-if-empty docker rm
           docker login --username ${{ secrets.DOCKERHUB_USERNAME }} --password ${{ secrets.DOCKERHUB_TOKEN }} 
           docker pull ${{ secrets.DOCKER_IMAGE }}
           docker container run -d -p 80:80 --name my_site ${{ secrets.DOCKER_IMAGE }}

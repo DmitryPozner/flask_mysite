@@ -3782,7 +3782,7 @@ input[type=range] {
 
 .silver,
 .light-gray {
-    color: #ddd
+    color: rgb(179, 159, 159)
 }
 
 .white {
@@ -4094,7 +4094,7 @@ figcaption {
 }
 
 .bg-splash-gray {
-    background-color: #f5f8fa
+    background-color: #f0f0f0
 }
 
 .nav-button {

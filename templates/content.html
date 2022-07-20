@@ -1,0 +1,24 @@
+<div class="col sm-col-9 px2">
+    {% if text %}
+    <h3 class="mb2">About me</h3>
+    <p>{{ text }}</p>
+    {% endif %}
+    <h3 class="mb2">Skills</h3>
+    <p>
+        <ul>
+            {% for skill in skills %}
+            <li>{{ skill }}</li>
+            {% endfor %}
+        </ul>
+    </p>
+
+</div>
+<div class="col sm-col-3 px2">
+    <h3 class="mb2">Contact</h3>
+    <div class="clearfix">
+        {% for contact in contacts %}
+        <a href={{ contact.link }} target="_blank" class="col dark-gray width-120">
+            <i class="fab fa-github"></i> <span class="h5 header-font">{{ contact.service}} <br></span><br> {% endfor %}
+
+    </div>
+</div>

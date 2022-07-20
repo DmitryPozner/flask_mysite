@@ -1,5 +1,4 @@
 FROM ubuntu:latest
-MAINTAINER Dmitry Pozner "dmitrypozner@dgp.ru"
 WORKDIR /app
 COPY . .
 RUN apt-get -y update && apt-get -y upgrade
