@@ -8,17 +8,18 @@ def root():
     skills = ['Linux Servers and Windows Servers','Scripts on bash, python, powershell','CI/CD (Jenkins, Github Actions)','Docker, K8s, Ansible','Git']
     contacts = [
         {
-            'service' : 'GitHub',
+            'service' : ' GitHub ',
             'link' : 'https://github.com/DmitryPozner'
-        },
-        {
-            'service' : 'Mail', 
-            'link' : 'https://yandex.mail.ru'
         }
+        # {
+        #     'service' : 'Mail', 
+        #     'link' : 'https://yandex.mail.ru'
+        # }
     ]
-    text = "Dmitry Pozner is a beginner system administrator and DevOps engineer."\
+    text = "Dmitry Pozner is a beginner system administrator. "\
            "I am currently working as a technical support specialist. I love IT. "\
-           "I am very fond of music, I play the guitar. I love jazz, blues, hard rock and extreme metal."
+           "I'm very interested in DevOps practices and GNU Linux Operating System. "\
+           "I am very fond of music, I play the guitar. I love jazz, blues, hard rock and extreme metal. "
     return render_template("index.html", title = 'Dmitry`s Web Page', skills = skills, contacts = contacts, text = text)
 
 
